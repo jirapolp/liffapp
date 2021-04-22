@@ -53,9 +53,7 @@
 
     }
 
-    async function shareMsg() {
     
-    }
 
     function logOut() {
     
@@ -78,9 +76,31 @@
       
 
     }
+    async function shareMsg() {
+      await liff.shareTargetPicker([
+        {
+          "type":"text",
+          "text":"this is mainframe"
+        }
+      ])
+    }
 
     async function sendMsg() {
-      
+      await liff.sendMessages(
+        [
+          {
+            "type": "text",
+            "text": "This is Andfields"
+          },
+          {
+            "stickerId": "51626519",
+            "packgageId": "11538",
+            "type": "sticker"
+
+          }
+        ]
+      )
+      alert("Message was successful")
     }
 
     function getContext() {
