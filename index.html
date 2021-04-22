@@ -86,21 +86,21 @@
     }
 
     async function sendMsg() {
-      await liff.sendMessages(
-        [
+      if (liff.getContext().type !== "none") {
+        //alert("sent...")
+        await liff.sendMessages([
           {
             "type": "text",
-            "text": "This is Andfields"
+            "text": "This message was sent by ShareTargetPicker"
           },
           {
             "stickerId": "51626519",
-            "packgageId": "11538",
+            "packageId": "11538",
             "type": "sticker"
-
           }
-        ]
-      )
-      alert("Message was successful")
+        ])
+        alert("Message sent")
+      }
     }
 
     function getContext() {
